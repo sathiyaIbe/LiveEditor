@@ -1,5 +1,5 @@
-'use client';
 /* eslint-disable */
+'use client';
 import React from "react";
 import {useEffect} from "react";
 import Webcam from "react-webcam";
