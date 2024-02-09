@@ -82,7 +82,7 @@ return(
       {/* <button onClick={openImgEditor}>Open Filerobot image editor</button> */}
       {isImgEditorShown ? (
         <div className="flex justify-center">
-        <div className="w-[1000px] flex justify-center" >
+        <div className="md:w-[1000px] flex justify-center" >
         <FilerobotImageEditor
           source={image}
           onSave={(editedImageObject, designState) =>
@@ -152,7 +152,7 @@ return(
       screenshotFormat="image/jpeg"
       width={780}
       videoConstraints={videoConstraints} />
-      <button className=" my-6 relative z-10 inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+      <button className=" my-6 relative z-10 inline-flex items-center justify-center  px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
     </div>
       
