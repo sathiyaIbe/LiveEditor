@@ -81,8 +81,6 @@ return(
       <div>
       {/* <button onClick={openImgEditor}>Open Filerobot image editor</button> */}
       {isImgEditorShown ? (
-        <div className="flex justify-center">
-        <div className="md:w-[1000px] flex justify-center" >
         <FilerobotImageEditor
           source={image}
           onSave={(editedImageObject, designState) =>
@@ -140,8 +138,6 @@ return(
           // defaultTabId={TABS.ANNOTATE} // or 'Annotate'
           // defaultToolId={TOOLS.TEXT} // or 'Text'
         />
-    </div>
-    </div>
 
       ):
       <div className="flex flex-col items-center" >
