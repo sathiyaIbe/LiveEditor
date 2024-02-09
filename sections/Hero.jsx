@@ -3,10 +3,20 @@
 import React from "react";
 import {useEffect} from "react";
 import Webcam from "react-webcam";
-import FilerobotImageEditor, {
-  TABS,
-  TOOLS,
-} from 'react-filerobot-image-editor';
+import dynamic from "next/dynamic";
+const FilerobotImageEditor = dynamic(( 
+  ) => import("react-filerobot-image-editor"), {
+  ssr: false,
+
+});
+
+const {TABS,TOOLS} = (() => import("react-filerobot-image-editor"));
+// const { TABS, TOOLS } = FilerobotImageEditor;
+// const { TABS, TOOLS } = FilerobotImageEditor;
+// import  {
+//   TABS,
+//   TOOLS,
+// } from 'react-filerobot-image-editor';
 
 const Hero = () =>
 {
@@ -17,7 +27,10 @@ const Hero = () =>
 
   // const openImgEditor = () => {
   //   setIsImgEditorShown(true);
-  // };
+  // };.
+  if (typeof window !== "undefined") {
+    // Client-side-only code
+  }
 
   const closeImgEditor = () => {
     setIsImgEditorShown(false);
@@ -123,9 +136,9 @@ return(
               },
             ],
           }}
-          tabsIds={[TABS.ADJUST, TABS.ANNOTATE, TABS.WATERMARK,TABS.FILTERS,TABS.RESIZE,TABS.FINETUNE]} // or {['Adjust', 'Annotate', 'Watermark']}
-          defaultTabId={TABS.ANNOTATE} // or 'Annotate'
-          defaultToolId={TOOLS.TEXT} // or 'Text'
+          // tabsIds={[TABS.ADJUST, TABS.ANNOTATE, TABS.WATERMARK,TABS.FILTERS,TABS.RESIZE,TABS.FINETUNE]} // or {['Adjust', 'Annotate', 'Watermark']}
+          // defaultTabId={TABS.ANNOTATE} // or 'Annotate'
+          // defaultToolId={TOOLS.TEXT} // or 'Text'
         />
     </div>
     </div>

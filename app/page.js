@@ -1,4 +1,6 @@
+
 /* eslint-disable */
+'use client';
 import {  Navbar } from '../components';
 import {  Hero, } from '../sections';
 
