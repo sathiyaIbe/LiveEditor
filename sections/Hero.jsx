@@ -81,7 +81,10 @@ return(
       <div>
       {/* <button onClick={openImgEditor}>Open Filerobot image editor</button> */}
       {isImgEditorShown ? (
+        <div className="h-[700px] w-[500px]">
         <FilerobotImageEditor
+        className="filerobot-editor w-[600px] h-[650px] "
+       
           source={image}
           onSave={(editedImageObject, designState) =>
             saved(editedImageObject,designState)
@@ -91,7 +94,7 @@ return(
           annotationsCommon={{
             fill: '#ff0000',
           }}
-          Text={{ text: 'Filerobot...' }}
+          Text={{ text: 'Enter Text' }}
           Rotate={{ angle: 90, componentType: 'slider' }}
           Crop={{
             presetsItems: [
@@ -138,7 +141,7 @@ return(
           // defaultTabId={TABS.ANNOTATE} // or 'Annotate'
           // defaultToolId={TOOLS.TEXT} // or 'Text'
         />
-
+</div>
       ):
       <div className="flex flex-col items-center" >
       <Webcam
