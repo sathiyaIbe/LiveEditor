@@ -81,9 +81,9 @@ return(
       <div>
       {/* <button onClick={openImgEditor}>Open Filerobot image editor</button> */}
       {isImgEditorShown ? (
-        <div className="h-[700px] w-[500px]">
+        <div className="h-[700px] w-[500px]  md:w-[1300px] md:h-[700px]">
         <FilerobotImageEditor
-        className="filerobot-editor w-[600px] h-[650px] "
+        className="filerobot-editor w-[600px] h-[650px]"
        
           source={image}
           onSave={(editedImageObject, designState) =>
@@ -146,10 +146,10 @@ return(
       <div className="flex flex-col items-center" >
       <Webcam
       audio={false}
-      height={320}
+      height={300}
       ref={webcamRef}
       screenshotFormat="image/jpeg"
-      width={780}
+      width={700}
       videoConstraints={videoConstraints} />
       <button className=" my-6 relative z-10 inline-flex items-center justify-center  px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
