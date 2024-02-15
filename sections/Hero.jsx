@@ -230,8 +230,8 @@ return(
 }
 {/* //  ):<></> 
 // } */}
- <img src="frame.png" className='absolute w-[90vw] h-[90vh] ' alt="frame"/>
-  <img className="w-[90vw] h-[90vh] p-1" src={image} alt={"img"} />
+ <img src="frame.png" className='absolute left-0 right-0 text-center flex justify-center self-center w-[90vw] h-[90vh] ' alt="frame"/>
+  <img className="w-[90vw] h-[90vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
@@ -242,14 +242,14 @@ return(
   </h1> */}
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[5%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute  w-[90vw] h-[85h]' alt="frame"/>
+        <img src="frame.png"  className='absolute  w-[90vw] h-[95h]' alt="frame"/>
       <Webcam
       audio={false}
       
       ref={webcamRef}
       screenshotFormat="image/jpeg"
       
-      className="p-1 w-[90vw] h-[90vh]"
+      className="p-1 w-[90vw] h-[85vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
