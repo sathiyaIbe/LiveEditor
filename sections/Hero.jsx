@@ -182,16 +182,16 @@ return(
   <div className='flex gap-6 pr-3'>
   <button type='button' onClick={onChangeText} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
 
-<IoText className='ext-white text-[24px] md:text-[36px] p-1 '  />
+<IoText className='ext-white text-[28px] md:text-[36px] p-1 '  />
 </button>
     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
 
-    <LuDownloadCloud className='text-white text-[24px] md:text-[36px] p-1  cursor-pointer' onClick={onButtonClick}/>
+    <LuDownloadCloud className='text-white text-[28px] md:text-[36px] p-1  cursor-pointer' onClick={onButtonClick}/>
      </div>
      <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
-    <AiOutlineClose className='ext-white text-[24px] md:text-[36px] p-1  cursor-pointer' onClick={closeImgEditor} />
+    <AiOutlineClose className='ext-white text-[28px] md:text-[36px] p-1  cursor-pointer' onClick={closeImgEditor} />
     </div>
   
     </div>
@@ -201,7 +201,7 @@ return(
     </div>
   <div className="w-[80vw] flex flex-col  ">
 </div> 
-<div ref={ref} className='flex flex-col min-h-[90vh] px-2 justify-center aligns-center'>
+<div ref={ref} className='flex flex-col min-h-[90vh] mx-2 justify-center aligns-center'>
 
  {toggleText&&
  <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move z-[100]'>
