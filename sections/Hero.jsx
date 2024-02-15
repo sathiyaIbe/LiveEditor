@@ -210,9 +210,9 @@ return(
  </div>
 }
 <div className="flex flex-col ">
- <img src="frame.png" className='absolute self-center min-w-[80vw] min-h-[80vh] ' alt="frame"/>
+ <img src="frame.png" className='absolute self-center min-w-[90vw] min-h-[85vh] ' alt="frame"/>
  </div>
-  <img className="min-w-[80vw] min-h-[80vh] p-1 " src={image} alt={"img"} />
+  <img className="min-w-[90vw] min-h-[85vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
