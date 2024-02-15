@@ -64,7 +64,6 @@ const Hero = () =>
    
   };
   const onChangeText = () => {
-    alert("aa")
 setText("Enter the text");
 setToggleText(!toggleText);
 };
@@ -177,14 +176,14 @@ return(
 // </div>
 <div className="flex flex-col ">
   <div className='self-center'>
-    <div className='flex  justify-end   left-0 right-0 absolute w-[94vw] md:w-[90vw]'>
+    <div className='flex  justify-end z-[100]  left-0 right-0 absolute w-[94vw] md:w-[90vw]'>
     <div className='flex justify-end   md:w-[50vw] w-[90vw]  py-11'>
 
   <div className='flex gap-6 pr-3'>
-  <div className='bg-zinc-950 bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
+  <button type='button' onClick={onChangeText} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
 
-<IoText className='ext-white text-[24px] md:text-[36px] p-1 cursor-pointer' onClick={onChangeText} />
-</div>
+<IoText className='ext-white text-[24px] md:text-[36px] p-1 '  />
+</button>
     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
 
@@ -231,7 +230,7 @@ return(
 }
 {/* //  ):<></> 
 // } */}
- <img src="frame.png" className='absolute w-[90vw] h-[90vh]' alt="frame"/>
+ <img src="frame.png" className='absolute w-[90vw] h-[90vh] ' alt="frame"/>
   <img className="w-[90vw] h-[90vh] p-1" src={image} alt={"img"} />
 </div>
 </div>
@@ -241,9 +240,9 @@ return(
          {/* <h1 className="text-center  font-bold sm:text-[24px] md:text-3xl uppercase ml-2 md:ml-0 pt-6 absolute font-sans text-yellow-500">
  Live Image Editor
   </h1> */}
-  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[15%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[5%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute  w-[90vw] h-[90vh]' alt="frame"/>
+        <img src="frame.png"  className='absolute  w-[90vw] h-[85h]' alt="frame"/>
       <Webcam
       audio={false}
       
