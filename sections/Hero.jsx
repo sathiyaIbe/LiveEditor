@@ -201,18 +201,18 @@ return(
     </div>
   <div className="w-[80vw] flex flex-col  ">
 </div> 
-<div ref={ref} className='flex flex-col min-h-[90vh] justify-center aligns-center'>
+<div ref={ref} className='flex flex-col min-h-[90vh] px-2 justify-center aligns-center'>
 
  {toggleText&&
  <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move z-[100]'>
-<input className="md:max-w-[15vw] max-w-[30vw]  self-center   bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
+<input className="md:max-w-[40vw] max-w-[30vw]  self-center   bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
  type='text' onChange={onChange} value={text} />
  </div>
 }
 <div className="flex flex-col ">
  <img src="frame.png" className='absolute self-center min-w-[90vw] min-h-[85vh] ' alt="frame"/>
  </div>
-  <img className="min-w-[90vw] min-h-[78vh] p-1 " src={image} alt={"img"} />
+  <img className="min-w-[90vw] min-h-[76vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
