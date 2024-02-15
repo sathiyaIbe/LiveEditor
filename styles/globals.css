@@ -23,12 +23,12 @@
 
 .text-fix {
   position:absolute;
-  bottom:5%;
+  bottom:8%;
   right:0;
   left:0;
   text-align: center;
   font-family:'Open Sans',sans-serif;
   font-weight:bolder;
-  @apply text-[20px] md:text-[24px] ml-11 ;
+  @apply text-[20px] md:text-[24px] ml-6 ;
   
 }
