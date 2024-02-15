@@ -59,6 +59,8 @@ const Hero = () =>
 
   const closeImgEditor = () => {
     setIsImgEditorShown(false);
+    settext("Enter Text");
+    setToggleText(false);
   };
   const onChangeText = () => {
 setText("Enter the text");
@@ -186,11 +188,11 @@ return(
     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
 
-    <LuDownloadCloud className='text-white text-[20px] md:text-[36px] p-1  cursor-pointer' onClick={onButtonClick}/>
+    <LuDownloadCloud className='text-white text-[24px] md:text-[36px] p-1  cursor-pointer' onClick={onButtonClick}/>
      </div>
      <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
-    <AiOutlineClose className='ext-white text-[20px] md:text-[36px] p-1  cursor-pointer' onClick={closeImgEditor} />
+    <AiOutlineClose className='ext-white text-[24px] md:text-[36px] p-1  cursor-pointer' onClick={closeImgEditor} />
     </div>
   
     </div>
