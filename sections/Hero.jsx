@@ -220,7 +220,7 @@ return(
       <div className="flex flex-col items-center mt-11 md:pt-6 " >
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[0]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute max-w-[90vw] max-h-[85vh]' alt="frame"/>
+        <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh]' alt="frame"/>
       <Webcam
       audio={false}
       
@@ -228,7 +228,7 @@ return(
       screenshotFormat="image/jpeg"
       
     
-      className="p-1 max-w-[90vw] max-h-[75vh]"
+      className="p-1 min-w-[90vw] min-h-[85vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
