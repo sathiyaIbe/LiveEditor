@@ -54,7 +54,9 @@ const Hero = () =>
   function functionToFocus() {
     
      document.getElementById('input').focus();
+     if(text="Enter text"){
      setText("");
+     }
   }
 
   // const openImgEditor = () => {
@@ -71,7 +73,7 @@ const Hero = () =>
    
   };
   const onChangeText = () => {
-setText("Enter the text");
+setText("Enter text");
 setToggleText(!toggleText);
 };
 useEffect(() =>{
