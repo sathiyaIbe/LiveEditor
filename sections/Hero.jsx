@@ -58,9 +58,10 @@ const Hero = () =>
   }
 
   const closeImgEditor = () => {
-    setIsImgEditorShown(false);
-    settext("Enter Text");
+    setText("Enter Text");
     setToggleText(false);
+    setIsImgEditorShown(false);
+   
   };
   const onChangeText = () => {
 setText("Enter the text");
@@ -225,7 +226,7 @@ return(
  (  */}
  {toggleText&&
  <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move'>
-<input className="md:max-w-[15vw] max-w-[30vw]  self-center mb-4  bg-transparent border  border-none text-gray-900  rounded-lg focus:ring-none focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-none"
+<input className="md:max-w-[15vw] max-w-[30vw]  self-center mb-4  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
  type='text' onChange={onChange} value={text} />
  </div>
 }
@@ -236,16 +237,25 @@ return(
 </div>
 </div>
       ):
-      <div className="flex flex-col items-center" >
+      <div className="flex flex-col items-center md:pt-6 " >
+         <h1 className="text-center  font-bold sm:text-[24px] md:text-3xl uppercase ml-2 md:ml-0 pt-6 absolute font-sans text-yellow-500">
+ Live Image Editor
+  </h1>
+  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[15%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+        Capture</button>
       <Webcam
       audio={false}
       height={970}
       ref={webcamRef}
       screenshotFormat="image/jpeg"
       width={1024}
+      className="border border-[20px]  border-yellow-600"
       videoConstraints={videoConstraints} />
-      <button className=" my-6 relative z-10 inline-flex items-center justify-center  px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+     
+      {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
+         */}
+        
     </div>
       
       }
