@@ -204,10 +204,12 @@ return(
 <div ref={ref} className='flex flex-col min-h-[83vh] mx-2 justify-center aligns-center'>
 
  {toggleText&&
+ <Draggable className='relative'>
  <div className=' text-fix self-center pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
 <input className="md:max-w-[40vw] max-w-[80vw]  self-center text-center  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
  type='text' onChange={onChange} value={text} />
  </div>
+ </Draggable>
 }
 <div className="flex flex-col ">
  <img src="frame.png" className='absolute self-center min-w-[90vw] min-h-[85vh] ' alt="frame"/>
