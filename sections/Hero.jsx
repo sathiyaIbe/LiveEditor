@@ -64,6 +64,7 @@ const Hero = () =>
    
   };
   const onChangeText = () => {
+    alert("aa")
 setText("Enter the text");
 setToggleText(!toggleText);
 };
@@ -177,11 +178,9 @@ return(
 <div className="flex flex-col ">
   <div className='self-center'>
     <div className='flex  justify-end   left-0 right-0 absolute w-[94vw] md:w-[90vw]'>
-    <div className='  justify-between  flex md:w-[50vw] w-[90vw]  py-11'>
-    <h1 className="text-center  font-bold sm:text-[24px] md:text-3xl uppercase ml-2 md:ml-0  font-sans text-cyan-500">
- Live Image Editor
-  </h1>
-  <div className='flex gap-6'>
+    <div className='flex justify-end   md:w-[50vw] w-[90vw]  py-11'>
+
+  <div className='flex gap-6 pr-3'>
   <div className='bg-zinc-950 bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
 
 <IoText className='ext-white text-[24px] md:text-[36px] p-1 cursor-pointer' onClick={onChangeText} />
@@ -232,8 +231,8 @@ return(
 }
 {/* //  ):<></> 
 // } */}
- <img src="frame.png" className='absolute w-[1024px] h-[610px]' alt="frame"/>
-  <img className="w-[1024px] h-[610px] p-1" src={image} alt={"img"} />
+ <img src="frame.png" className='absolute w-[90vw] h-[90vh]' alt="frame"/>
+  <img className="w-[90vw] h-[90vh] p-1" src={image} alt={"img"} />
 </div>
 </div>
 </div>
@@ -244,14 +243,14 @@ return(
   </h1> */}
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[15%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png" className='absolute' alt="frame"/>
+        <img src="frame.png"  className='absolute  w-[90vw] h-[90vh]' alt="frame"/>
       <Webcam
       audio={false}
-      height={610}
+      
       ref={webcamRef}
       screenshotFormat="image/jpeg"
-      width={1024}
-      className="p-1"
+      
+      className="p-1 w-[90vw] h-[90vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
