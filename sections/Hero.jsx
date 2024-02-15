@@ -54,6 +54,7 @@ const Hero = () =>
   function functionToFocus() {
     
      document.getElementById('input').focus();
+     setText("");
   }
 
   // const openImgEditor = () => {
