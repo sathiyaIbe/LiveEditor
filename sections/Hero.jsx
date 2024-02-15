@@ -201,7 +201,7 @@ return(
     </div>
   <div className="w-[80vw] flex flex-col  ">
 </div> 
-<div ref={ref} className='flex flex-col min-h-[85vh] mx-2 justify-center aligns-center'>
+<div ref={ref} className='flex flex-col min-h-[83vh] mx-2 justify-center aligns-center'>
 
  {toggleText&&
  <div className=' text-fix self-center pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
