@@ -54,7 +54,7 @@ const Hero = () =>
   function functionToFocus() {
     
      document.getElementById('input').focus();
-     if(text="Enter text"){
+     if(text=="Enter text"){
      setText("");
      }
   }
