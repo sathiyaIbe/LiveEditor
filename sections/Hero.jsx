@@ -228,7 +228,7 @@ return(
       screenshotFormat="image/jpeg"
       
     
-      className="p-1 min-w-[90vw] min-h-[78vh]"
+      className="p-1 min-w-[90vw] max-h-[85vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>

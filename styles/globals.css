@@ -29,6 +29,6 @@
   text-align: center;
   font-family:'Open Sans',sans-serif;
   font-weight:bolder;
-  @apply text-[20px] md:text-[24px] ml-6 ;
+  @apply text-[36px] md:text-[56px] ml-6 ;
   
 }
