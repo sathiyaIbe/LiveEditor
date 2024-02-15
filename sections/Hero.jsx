@@ -219,8 +219,8 @@ return(
  onStart={functionToFocus }
   className=''  >
 
-<input id="input"  className="md:max-w-[40vw] max-w-[80vw]  self-center text-center  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
- type='text' onChange={onChange} value={text} />
+<textarea row="3" id="input"  className="md:max-w-[40vw] max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px]  self-center text-center  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
+ type='text' onChange={onChange} value={text}></textarea>
   </Draggable>
  </div>
 
