@@ -201,7 +201,7 @@ return(
     </div>
   <div className="w-[80vw] flex flex-col  ">
 </div> 
-<div ref={ref} className='flex flex-col justify-center aligns-center'>
+<div ref={ref} className='flex flex-col min-h-[90vh] justify-center aligns-center'>
 
  {toggleText&&
  <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move z-[100]'>
@@ -212,7 +212,7 @@ return(
 <div className="flex flex-col ">
  <img src="frame.png" className='absolute self-center min-w-[80vw] min-h-[80vh] ' alt="frame"/>
  </div>
-  <img className="max-w-[80vw] max-h-[80vh] p-1 " src={image} alt={"img"} />
+  <img className="min-w-[80vw] min-h-[80vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
