@@ -199,39 +199,18 @@ return(
 
 
     </div>
-  <div className="w-[70vw] flex flex-col  ">
-{/* <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white self-center">Enter The Text</label>
-<input className="w-[40vw] self-center mb-4  bg-gray-50 border w-25 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
- type='text' placeholder="Enter the text" onChange={onChange} value={text} />*/}
+  <div className="w-[80vw] flex flex-col  ">
 </div> 
-<div ref={ref} className='flex flex-col justify-center aligns-center py-6 mt-16 '>
-{/* <Draggable
-        // axis="x"
-        // handle=".handle"
-        // defaultPosition={{x: 0, y: 0}}
-        // position={null}
-        // grid={[25, 25]}
-        // scale={1}
-        // onStart={this.handleStart}
-        // onDrag={this.handleDrag}
-        // onStop={this.handleStop}
-        >
-<div>My element is draggable now</div>
+<div ref={ref} className='flex flex-col justify-center aligns-center   pt-16 '>
 
-</Draggable> */}
-{/* <Draggable> */}
-{/* {toggleText?
- (  */}
  {toggleText&&
- <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move'>
+ <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move z-[100]'>
 <input className="md:max-w-[15vw] max-w-[30vw]  self-center mb-4  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
  type='text' onChange={onChange} value={text} />
  </div>
 }
-{/* //  ):<></> 
-// } */}
-<div className="flex">
- <img src="frame.png" className='absolute  max-w-[80vw] max-h-[80vh] ' alt="frame"/>
+<div className="flex flex-col ">
+ <img src="frame.png" className='absolute self-center min-w-[80vw] min-h-[80vh] ' alt="frame"/>
  </div>
   <img className="max-w-[80vw] max-h-[80vh] p-1 " src={image} alt={"img"} />
 </div>
@@ -239,9 +218,6 @@ return(
 </div>
       ):
       <div className="flex flex-col items-center mt-11 md:pt-6 " >
-         {/* <h1 className="text-center  font-bold sm:text-[24px] md:text-3xl uppercase ml-2 md:ml-0 pt-6 absolute font-sans text-yellow-500">
- Live Image Editor
-  </h1> */}
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[0]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
         <img src="frame.png"  className='absolute max-w-[90vw] max-h-[85vh]' alt="frame"/>
@@ -252,7 +228,7 @@ return(
       screenshotFormat="image/jpeg"
       
     
-      className="p-1 max-w-[90vw] max-h-[85vh]"
+      className="p-1 max-w-[90vw] max-h-[75vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
