@@ -204,7 +204,7 @@ return(
 <input className="w-[40vw] self-center mb-4  bg-gray-50 border w-25 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
  type='text' placeholder="Enter the text" onChange={onChange} value={text} />*/}
 </div> 
-<div ref={ref} className='flex flex-col justify-center aligns-center py-6 '>
+<div ref={ref} className='flex flex-col justify-center aligns-center py-6 mt-16 '>
 {/* <Draggable
         // axis="x"
         // handle=".handle"
@@ -230,26 +230,29 @@ return(
 }
 {/* //  ):<></> 
 // } */}
- <img src="frame.png" className='absolute left-0 right-0 text-center flex justify-center self-center w-[90vw] h-[90vh] ' alt="frame"/>
-  <img className="w-[90vw] h-[90vh] p-1 " src={image} alt={"img"} />
+<div className="flex">
+ <img src="frame.png" className='absolute  max-w-[80vw] max-h-[80vh] ' alt="frame"/>
+ </div>
+  <img className="max-w-[80vw] max-h-[80vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
       ):
-      <div className="flex flex-col items-center md:pt-6 " >
+      <div className="flex flex-col items-center mt-11 md:pt-6 " >
          {/* <h1 className="text-center  font-bold sm:text-[24px] md:text-3xl uppercase ml-2 md:ml-0 pt-6 absolute font-sans text-yellow-500">
  Live Image Editor
   </h1> */}
-  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[5%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[0]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute  w-[90vw] h-[95h]' alt="frame"/>
+        <img src="frame.png"  className='absolute max-w-[90vw] max-h-[85vh]' alt="frame"/>
       <Webcam
       audio={false}
       
       ref={webcamRef}
       screenshotFormat="image/jpeg"
       
-      className="p-1 w-[90vw] h-[85vh]"
+    
+      className="p-1 max-w-[90vw] max-h-[85vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
