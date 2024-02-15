@@ -205,20 +205,20 @@ return(
 
  {toggleText&&
  <div className=' text-fix self-center flex fex-col justify-center absolute cursor-move z-[100]'>
-<input className="md:max-w-[15vw] max-w-[30vw]  self-center mb-4  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
+<input className="md:max-w-[15vw] max-w-[30vw]  self-center   bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
  type='text' onChange={onChange} value={text} />
  </div>
 }
 <div className="flex flex-col ">
  <img src="frame.png" className='absolute self-center min-w-[90vw] min-h-[85vh] ' alt="frame"/>
  </div>
-  <img className="min-w-[90vw] min-h-[83vh] p-1 " src={image} alt={"img"} />
+  <img className="min-w-[90vw] min-h-[80vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
       ):
       <div className="flex flex-col items-center mt-11 md:pt-6 " >
-  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[0]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[-2%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
         <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh]' alt="frame"/>
       <Webcam
@@ -228,7 +228,7 @@ return(
       screenshotFormat="image/jpeg"
       
     
-      className="p-1 min-w-[90vw] min-h-[83vh]"
+      className="p-1 min-w-[90vw] min-h-[80vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
