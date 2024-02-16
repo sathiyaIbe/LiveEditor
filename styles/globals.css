@@ -27,8 +27,8 @@
   right:0;
   left:0;
   text-align: center;
-  font-family:"Popins";
-  font-weight:bolder;
+  font-family: "Poppins", sans-serif;
+  font-weight:bold;
   @apply text-[36px] md:text-[56px] ml-4 ;
   
 }
