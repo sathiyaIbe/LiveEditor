@@ -27,8 +27,25 @@
   right:0;
   left:0;
   text-align: center;
-  font-family:'Roboto';
+  font-family:"Popins";
   font-weight:bolder;
   @apply text-[36px] md:text-[56px] ml-4 ;
   
+}
+
+.textArea{
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  @apply text-[36px] md:text-[56px] ml-4 ;
+}
+
+
+.Header{
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  @apply text-[36px] md:text-[56px] ml-4 ;
 }
