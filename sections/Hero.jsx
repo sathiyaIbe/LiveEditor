@@ -67,7 +67,7 @@ const Hero = () =>
   }
 
   const closeImgEditor = () => {
-    setText("Enter Text");
+  
     setToggleText(false);
     setIsImgEditorShown(false);
    
