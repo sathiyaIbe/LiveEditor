@@ -67,13 +67,13 @@ const Hero = () =>
   }
 
   const closeImgEditor = () => {
-  
+  setText('')
     setToggleText(false);
     setIsImgEditorShown(false);
    
   };
-  const onChangeText = () => {
-setToggleText(true);
+  const onChangeText = (e) => {
+setToggleText(e);
 };
 useEffect(() =>{
     
@@ -123,12 +123,12 @@ return(
     
 <>
 {!toggleText&&
-<div className="flex flex-col">
-<h1 className="Header mb-6 mt-6">Enter The Comments</h1>
+<div className="flex flex-col textEditodBg">
+{/* <h1 className="Header mb-6 mt-6">Enter The Comments</h1> */}
 
-<textarea row="3" id="input"  className="md:max-w-[40vw] textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px]  self-center text-center  bg-transparent border  border-none text-black  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
- type='text' placeholder="Enter The Text" onChange={onChange} value={text}></textarea>
- <button type="button" className="my-6 self-center  max-w-[150px]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={onChangeText}>Next</button>
+<textarea row="3" id="input"  className="md:max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
+ type='text' placeholder="Please add your message..." onChange={onChange} value={text}></textarea>
+ <button type="button" className="my-6 self-center  max-w-[150px]  px-8 py-3 text-[22px] font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={()=>onChangeText(true)}>Next</button>
 </div>
 }
 {toggleText&&
@@ -140,10 +140,10 @@ return(
     <div className='flex justify-end   md:w-[50vw] w-[90vw]  py-11'>
 
   <div className='flex gap-6 pr-3'>
-  {/* <button type='button' onClick={onChangeText} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
+  <button type='button' onClick={()=>onChangeText(false)} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
 
 <IoText className='ext-white text-[28px] md:text-[36px] p-1 '  />
-</button> */}
+</button>
     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
     <LuDownloadCloud className='text-white text-[28px] md:text-[36px] p-1  cursor-pointer' onClick={onButtonClick}/>
      </div>

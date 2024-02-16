@@ -49,3 +49,14 @@
   font-style: normal;
   @apply text-[36px] md:text-[56px] ml-4 ;
 }
+
+.textEditodBg{
+ background-image:url(../public/bg.png);
+ background-size: cover;
+ background-repeat:'no-repeat' !important;
+ min-height:100vh !important;
+}
+
+.buttonNext{
+  font-family: "Poppins", sans-serif;
+}
