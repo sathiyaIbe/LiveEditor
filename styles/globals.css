@@ -36,9 +36,9 @@
 .textArea{
   text-align: center;
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
-  @apply text-[36px] md:text-[56px] ml-4 ;
+  @apply text-[24px] md:text-[56px] ml-4 ;
 }
 
 
