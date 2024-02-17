@@ -37,6 +37,8 @@ const Hero = () =>
   const [toggleText, setToggleText] = React.useState(false);
   const ref = useRef(null);;
   const [uploadCheck,setUploadCheck] = React.useState(false)
+  
+let ms = Date.now();
   const UploadFile=async()=>{
     const files=fileInputRef.current.files
     console.log(files[0].name)
@@ -60,12 +62,13 @@ const Hero = () =>
   }
 }
   const onButtonClick =async () => {
+
     toPng(ref.current)
         .then((dataUrl) => {
         
           const link = document.createElement('a')
           link.href = dataUrl
-          link.download = 'my-image-name.png'
+          link.download = `${ms}.png`
          
           link.click()
           setUploadCheck(true)
@@ -105,7 +108,6 @@ function onChange(e) {
 setText(e.target.value)
 }
 
-let ms = Date.now();
 
 
 const options = {
