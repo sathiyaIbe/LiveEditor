@@ -15,6 +15,7 @@ import { UploadButton } from "@bytescale/upload-widget-react";
 import * as Bytescale from "@bytescale/sdk";
 import FormData from "form-data";
 import axios from "axios";
+import {ScaleLoader} from "react-spinners";
 const Hero = () =>
 {
   const [video, setVideo] = React.useState(null);
@@ -24,6 +25,10 @@ const Hero = () =>
   const [toggleText, setToggleText] = React.useState(false);
   const ref = useRef(null);;
   const [uploadCheck,setUploadCheck] = React.useState(false)
+  let popupOverlayRef=useRef(null)
+  let popupContainerRef=useRef(null)
+  let popupOverlayRefMob=useRef(null)
+  let popupContainerRefMob=useRef(null)
   
 let ms = Date.now();
   const UploadFile=async(e)=>{
@@ -52,10 +57,35 @@ let ms = Date.now();
         body: datass
       })
       const data=await response.json();
-      console.log(data)
+      if(data.message==="Successfully saved image"){
+        alert("Uploaded Successfully ");
+        closePopup()
+        setIsImgEditorShown(false)
+        setToggleText(false)
+        setText("")
+      }else{
+        alert("Upload Failed Try Again");
+      }
     }catch(e){
     console.error(e)
     }
+  }
+
+  function openPopup() {
+    popupOverlayRefMob.current.style.display = "flex";
+  
+    setTimeout(() => {
+      popupContainerRefMob.current.style.opacity = "1";
+      popupContainerRefMob.current.style.transform = "scale(1)";
+    }, 0.1);
+  }
+  function closePopup() {
+    popupContainerRefMob.current.style.opacity = "0";
+    popupContainerRefMob.current.style.transform = "scale(0.8)";
+  
+    setTimeout(() => {
+      popupOverlayRefMob.current.style.display = "none";
+    }, 1000);
   }
 
   const onButtonClick =async () => {
@@ -66,6 +96,7 @@ let ms = Date.now();
           const link = document.createElement('a')
           link.href = dataUrl
           link.download = `${ms}.png`
+          openPopup()
           UploadFile(dataUrl)
 
           // link.click()
@@ -127,10 +158,23 @@ function controlFinish(file){
  setUploadCheck(false)
   }
 }
+// useEffect(()=>{
+// openPopup()
+// },[])
 
 return(
   <section>
- 
+ <div ref={popupOverlayRefMob} class="popup-overlay ">
+    <div ref={popupContainerRefMob}  class="popup-container_main w-[90%] flex flex-col justify-center gap-3">
+
+      <div class="popup-card_main flex justify-center   ">
+    
+      <ScaleLoader className="text-[48px]" color="#F9A603" />
+
+      </div>
+      <p className="loadText">Almost there file is uploading...</p>
+    </div>
+  </div>
       <div>
       {isImgEditorShown ?
     
