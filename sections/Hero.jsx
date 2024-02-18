@@ -13,21 +13,8 @@ import { FaPencil } from "react-icons/fa6";
 import Uploady from "@rpldy/uploady";
 import { UploadButton } from "@bytescale/upload-widget-react";
 import * as Bytescale from "@bytescale/sdk";
-
-// const FilerobotImageEditor = dynamic(( 
-//   ) => import("react-filerobot-image-editor"), {
-//   ssr: false,
-
-// });
-
-// const {TABS,TOOLS} = (() => import("react-filerobot-image-editor"));
-// const { TABS, TOOLS } = FilerobotImageEditor;
-// const { TABS, TOOLS } = FilerobotImageEditor;
-// import  {
-//   TABS,
-//   TOOLS,
-// } from 'react-filerobot-image-editor';
-
+import FormData from "form-data";
+import axios from "axios";
 const Hero = () =>
 {
   const [video, setVideo] = React.useState(null);
@@ -39,28 +26,38 @@ const Hero = () =>
   const [uploadCheck,setUploadCheck] = React.useState(false)
   
 let ms = Date.now();
-  const UploadFile=async()=>{
-    const files=fileInputRef.current.files
-    console.log(files[0].name)
-    if (files.length>0){
-      var form= new FormData()
+  const UploadFile=async(e)=>{
+    // const files=fileInputRef.current.files
+    // console.log(files[0].name)
+    // if (files.length>0){
+    //   var form= new FormData()
       
-      for (let i=0;i<files.length;i++){
-        form.append('files', files[i],files[i].name);
-      }
-    
+    //   for (let i=0;i<files.length;i++){
+    //     form.append('files', files[i],files[i].name);
+    //   }
+  
+    const datass=e.toString();
+    // var datas= new FormData();
+    // datas.append('file', data);
+    // console.log(data)   
+    // console.log(datas)    
+ 
+    // axios.post("http://localhost:8083/upload", data).then((response) => {
+    //   console.log(response);
+    // });
+
     try{
-      const response= await fetch("http://localhost:8083/upload",{
+      const response= await fetch("https://photostore-x10i.onrender.com/upload",{
         method: "POST",
-        body: form
+        body: datass
       })
       const data=await response.json();
-      console.log(data.files)
+      console.log(data)
     }catch(e){
     console.error(e)
     }
   }
-}
+
   const onButtonClick =async () => {
 
     toPng(ref.current)
@@ -69,9 +66,11 @@ let ms = Date.now();
           const link = document.createElement('a')
           link.href = dataUrl
           link.download = `${ms}.png`
-         
-          link.click()
-          setUploadCheck(true)
+          UploadFile(dataUrl)
+
+          // link.click()
+
+          // setUploadCheck(true)
       })
           .catch((err) => {
             console.log(err)
