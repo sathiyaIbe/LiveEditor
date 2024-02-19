@@ -16,6 +16,7 @@ import * as Bytescale from "@bytescale/sdk";
 import FormData from "form-data";
 import axios from "axios";
 import {ScaleLoader} from "react-spinners";
+import {Camera} from "react-camera-pro";
 const Hero = () =>
 {
   const [video, setVideo] = React.useState(null);
@@ -25,6 +26,7 @@ const Hero = () =>
   const [toggleText, setToggleText] = React.useState(false);
   const ref = useRef(null);;
   const [uploadCheck,setUploadCheck] = React.useState(false)
+  const camera = useRef(null);
   let popupOverlayRef=useRef(null)
   let popupContainerRef=useRef(null)
   let popupOverlayRefMob=useRef(null)
@@ -124,9 +126,15 @@ setToggleText(e);
   };
   const webcamRef = React.useRef(null);
   const capture = React.useCallback(
-    () => {
-      setImage(webcamRef.current.getScreenshot())
 
+    () => {
+      // const check=async()=>{
+      //   const stream = await navigator.mediaDevices.getUserMedia({video: true});
+
+      // }
+      // check()
+      
+      setImage(camera.current.takePhoto())
       setVideo(true)      
       setIsImgEditorShown(true);
     },
@@ -223,8 +231,8 @@ return(
     </div>
     </div>
     </div>
-
-<div ref={ref} className='flex flex-col min-h-[83vh] mx-2 justify-center aligns-center'>
+<div className="min-h-screen flex flex-col justify-center">
+<div ref={ref} className='flex flex-col  mx-2 justify-center aligns-center'>
 
 
 
@@ -244,9 +252,10 @@ return(
       
 
 <div className="flex flex-col ">
- <img src="frame.png" className='absolute self-center min-w-[90vw] min-h-[85vh] ' alt="frame"/>
+ <img src="frame.png" className='absolute self-center  ' alt="frame"/>
  </div>
-  <img className="min-w-[90vw] min-h-[85vh] p-1 " src={image} alt={"img"} />
+  <img className=" m-1 " src={image} alt={"img"} />
+</div>
 </div>
 </div>
 </div>
@@ -258,8 +267,7 @@ return(
       <div className="flex flex-col items-center mt-11 md:pt-6 " >
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[-2%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh]' alt="frame"/>
-      <Webcam
+      {/* <Webcam
       audio={false}
       
       ref={webcamRef}
@@ -267,7 +275,9 @@ return(
       
     
       className="p-1 min-w-[90vw] max-h-[83vh]"
-      videoConstraints={videoConstraints} />
+      videoConstraints={videoConstraints} /> */}
+       <Camera ref={camera} className="m-1  "  aspectRatio={4 / 6.3} />
+       <img src="frame.png"  className='absolute ' alt="frame"/>
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
