@@ -249,7 +249,7 @@ return(
   </UploadButton>
         </div>:
 
-<div className="flex flex-col ">
+<div className="flex flex-col p-6 p-6">
   <div className='self-center'>
     <div className='flex  justify-end z-[100]  left-0 right-0 absolute w-[94vw] md:w-[90vw]'>
     <div className='flex justify-end   md:w-[50vw] w-[90vw]  py-11'>
@@ -271,7 +271,7 @@ return(
     </div>
     </div>
 
-<div ref={ref} className='flex flex-col min-h-[83vh] mx-2 justify-center aligns-center'>
+<div ref={ref} className='flex flex-col min-h-[83vh]  py-3 justify-center aligns-center'>
 
 
 
@@ -291,9 +291,9 @@ return(
       
 
 <div className="flex flex-col ">
- <img src="frame.png" className='absolute self-center min-w-[90vw] min-h-[85vh] ' alt="frame"/>
+ <img src="frame.png" className='absolute self-center max-w-[95vw] min-h-[87vh] ' alt="frame"/>
  </div>
-  <img className="min-w-[90vw] min-h-[85vh] p-1 " src={image} alt={"img"} />
+  <img className="max-w-[95vw] min-h-[85vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
@@ -313,7 +313,7 @@ return(
       screenshotFormat="image/webp"
       
     
-      className="p-1 min-w-[90vw] max-h-[83vh]"
+      className="p-1 min-w-[90vw] min-h-[83vh]"
       videoConstraints={videoConstraints} />
      
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
