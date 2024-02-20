@@ -116,8 +116,10 @@ let ms = Date.now();
 
   const onButtonClick =async () => {
     html2canvas(ref.current).then(function(canvas) {
+
       var pngUrl = canvas.toDataURL("image/webp");
       UploadFile(pngUrl)
+      openPopup()
   });
 
     // toPng(ref.current)
