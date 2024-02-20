@@ -293,7 +293,7 @@ return(
 <div className="flex flex-col ">
  <img src="frame.png" className='absolute self-center max-w-[95vw] min-h-[87vh] ' alt="frame"/>
  </div>
-  <img className="max-w-[95vw] min-h-[85vh] p-1 " src={image} alt={"img"} />
+  <img className="max-w-[95vw] max-h-[87vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>
