@@ -1,7 +1,7 @@
 /* eslint-disable */
 'use client';
 import React, { useCallback, useRef } from 'react';
-import { toPng } from 'html-to-image';
+import {toPng, toBlob,toCanvas,toPixelData } from 'html-to-image';
 import {useEffect} from "react";
 import Webcam from "react-webcam";
 import { LuDownloadCloud } from "react-icons/lu";
@@ -13,10 +13,10 @@ import { FaPencil } from "react-icons/fa6";
 import Uploady from "@rpldy/uploady";
 import { UploadButton } from "@bytescale/upload-widget-react";
 import * as Bytescale from "@bytescale/sdk";
-import FormData from "form-data";
+import { FormEvent } from 'react'
 import axios from "axios";
 import {ScaleLoader} from "react-spinners";
-import {Camera} from "react-camera-pro";
+import html2canvas from 'html2canvas';
 const Hero = () =>
 {
   const [video, setVideo] = React.useState(null);
@@ -44,8 +44,6 @@ let ms = Date.now();
     //   }
   
     const datass=e.toString();
-    // var datas= new FormData();
-    // datas.append('file', data);
     // console.log(data)   
     // console.log(datas)    
  
@@ -54,7 +52,12 @@ let ms = Date.now();
     // });
 
     try{
-      const response= await fetch("https://photostore-x10i.onrender.com/upload",{
+      const response= await fetch("https://photostore-x10i.onrender.com/upload",
+      // const response= await fetch("https://photoserver.netlify.app/upload",
+
+      // const response= await fetch("http://localhost:8083/upload",
+
+      {
         method: "POST",
         body: datass
       })
@@ -90,24 +93,58 @@ let ms = Date.now();
     }, 1000);
   }
 
+  function base64toBlob(base64Data, contentType) {
+    contentType = contentType || '';
+    var sliceSize = 1024;
+    var byteCharacters = atob(base64Data);
+    var bytesLength = byteCharacters.length;
+    var slicesCount = Math.ceil(bytesLength / sliceSize);
+    var byteArrays = new Array(slicesCount);
+
+    for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
+        var begin = sliceIndex * sliceSize;
+        var end = Math.min(begin + sliceSize, bytesLength);
+
+        var bytes = new Array(end - begin);
+        for (var offset = begin, i = 0; offset < end; ++i, ++offset) {
+            bytes[i] = byteCharacters[offset].charCodeAt(0);
+        }
+        byteArrays[sliceIndex] = new Uint8Array(bytes);
+    }
+    return new Blob(byteArrays, { type: contentType });
+}
+
   const onButtonClick =async () => {
+    html2canvas(ref.current).then(function(canvas) {
+      var pngUrl = canvas.toDataURL("image/webp");
+      UploadFile(pngUrl)
+  });
 
-    toPng(ref.current)
-        .then((dataUrl) => {
+    // toPng(ref.current)
+    //     .then((dataUrl) => {
         
-          const link = document.createElement('a')
-          link.href = dataUrl
-          link.download = `${ms}.png`
-          openPopup()
-          UploadFile(dataUrl)
+    //       const link = document.createElement('a')
+    //       link.href = dataUrl
+    //       link.download = `${ms}.png`
+    //       openPopup()
+    //       // const form_data=new FormData();
+    //       // form_data.append("file",dataUrl);
+    //       // for (var i of form_data.entries()) {
+    //       // console.log(i[0]+"," +i[1])
+    //       // }
+    //       console.log(dataUrl)
+    //       UploadFile(dataUrl)
 
-          // link.click()
+    //       // const result=base64toBlob(dataUrl, "image/png")
+       
 
-          // setUploadCheck(true)
-      })
-          .catch((err) => {
-            console.log(err)
-          })
+    //       // link.click()
+
+    //       // setUploadCheck(true)
+    //   })
+    //       .catch((err) => {
+    //         console.log(err)
+    //       })
   }
   const closeImgEditor = () => {
   setText('')
@@ -134,7 +171,7 @@ setToggleText(e);
       // }
       // check()
       setImage(webcamRef.current.getScreenshot())
-
+console.log(webcamRef.current.getScreenshot())
       setVideo(true)      
       setIsImgEditorShown(true);
     },
@@ -271,7 +308,7 @@ return(
       audio={false}
       
       ref={webcamRef}
-      screenshotFormat="image/jpeg"
+      screenshotFormat="image/webp"
       
     
       className="p-1 min-w-[90vw] max-h-[83vh]"
