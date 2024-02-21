@@ -14,7 +14,6 @@ import Uploady from "@rpldy/uploady";
 import { UploadButton } from "@bytescale/upload-widget-react";
 import * as Bytescale from "@bytescale/sdk";
 import { FormEvent } from 'react'
-import axios from "axios";
 import {ScaleLoader} from "react-spinners";
 import html2canvas from 'html2canvas';
 const Hero = () =>
@@ -26,41 +25,20 @@ const Hero = () =>
   const [toggleText, setToggleText] = React.useState(false);
   const ref = useRef(null);;
   const [uploadCheck,setUploadCheck] = React.useState(false)
+  const [checkLoading,setCheckLoading] = React.useState(true)
+
   const camera = useRef(null);
   let popupOverlayRef=useRef(null)
   let popupContainerRef=useRef(null)
   let popupOverlayRefMob=useRef(null)
   let popupContainerRefMob=useRef(null)
-  let popupOverlayRefMob1=useRef(null)
-  let popupContainerRefMob1=useRef(null)
-  
-  const [checkLoading,setCheckLoading] = React.useState(true)
   
 let ms = Date.now();
   const UploadFile=async(e)=>{
-    // const files=fileInputRef.current.files
-    // console.log(files[0].name)
-    // if (files.length>0){
-    //   var form= new FormData()
-      
-    //   for (let i=0;i<files.length;i++){
-    //     form.append('files', files[i],files[i].name);
-    //   }
-  
     const datass=e.toString();
-    // console.log(data)   
-    // console.log(datas)    
- 
-    // axios.post("http://localhost:8083/upload", data).then((response) => {
-    //   console.log(response);
-    // });
 
     try{
       const response= await fetch("https://photostore-x10i.onrender.com/upload",
-      // const response= await fetch("https://photoserver.netlify.app/upload",
-
-      // const response= await fetch("http://localhost:8083/upload",
-
       {
         method: "POST",
         body: datass
@@ -69,10 +47,11 @@ let ms = Date.now();
       if(data.message==="Successfully saved image"){
         // alert("Uploaded Successfully ");
         // closePopup()
+        setCheckLoading(false);
         // setIsImgEditorShown(false)
         // setToggleText(false)
         // setText("")
-        setUploadCheck(false);
+
       }else{
         alert("Upload Failed Try Again");
       }
@@ -107,6 +86,7 @@ let ms = Date.now();
       UploadFile(pngUrl)
       openPopup()
   });
+
   }
   const closeImgEditor = () => {
   setText('')
@@ -117,13 +97,14 @@ let ms = Date.now();
   const onChangeText = (e) => {
 setToggleText(e);
 };
+
   const videoConstraints = {
     width: 1280,
     height: 720,
     facingMode: "user"
   };
   const webcamRef = React.useRef(null);
-  const capture = React.useCallback( () => {
+  const capture = React.useCallback(() => {
       setImage(webcamRef.current.getScreenshot())
       setVideo(true)      
       setIsImgEditorShown(true);
@@ -136,15 +117,24 @@ function onChange(e) {
 setText(e.target.value)
 }
 
+function controlFinish(file){
+  if(file){
+  alert("Uploaded Successfully");
+ setIsImgEditorShown(false)
+ setToggleText(false)
+ setText("")
+ setUploadCheck(false)
+  }
+}
 // useEffect(()=>{
 // openPopup()
 // },[])
 
 return(
-  <section>
+  <section className="md:max-w-[100vw] md:overflow-x-hidden">
  <div ref={popupOverlayRefMob} class="popup-overlay ">
-    <div ref={popupContainerRefMob}  class="popup-container_main w-[90%] flex flex-col justify-center gap-3">
-    {checkLoading?
+    <div ref={popupContainerRefMob}  class="popup-container_main w-[90%] flex flex-col justify-center  gap-3">
+      {checkLoading?
 <div className="bg-white  py-11 w-[70%] self-center rounded-lg">
       <div class=" flex justify-center mb-6">
     
@@ -159,7 +149,8 @@ return(
 
       </div>
 }
-</div>
+    </div>
+
   </div>
       <div>
       {isImgEditorShown ?
@@ -188,38 +179,37 @@ return(
   </UploadButton>
         </div>:
 
-<div className="flex flex-col p-6 p-6">
-  <div className='self-center'>
-    <div className='flex  justify-end z-[100]  left-0 right-0 absolute w-[94vw] md:w-[90vw]'>
+<div className="flex flex-col justify-center min-h-screen win-w-[100vw] ">
+  <div className=' self-center md:overflow-hidden'>
+    <div className='flex  justify-end z-[100]  left-0 right-0 absolute w-[94vw] md:w-[80vw] md:pt-4'>
     <div className='flex justify-end   md:w-[50vw] w-[90vw]  py-11'>
 
   <div className='flex gap-6 pr-3'>
   <button type='button' onClick={()=>onChangeText(false)} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
 
-<IoText className='ext-white text-[36px] md:text-[48px] p-1 '  />
+<IoText className='ext-white text-[36px] md:text-[46px] p-1 '  />
 </button>
     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
-    <LuDownloadCloud className='text-white text-[36px] md:text-[48px] p-1  cursor-pointer' onClick={onButtonClick}/>
+    <LuDownloadCloud className='text-white text-[36px] md:text-[46px] p-1  cursor-pointer' onClick={onButtonClick}/>
     
      </div>
      <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
-    <AiOutlineClose className='ext-white text-[36px] md:text-[48px] p-1  cursor-pointer' onClick={closeImgEditor} />
+    <AiOutlineClose className='ext-white text-[36px] md:text-[46px] p-1  cursor-pointer' onClick={closeImgEditor} />
     </div>
     </div>
     </div>
     </div>
 
-<div ref={ref} className='flex flex-col min-h-[83vh]  py-3  aligns-center'>
+<div ref={ref} className='flex flex-col min-h-[90vh] w-full md:py-0 py-3 md:mr-6 '>
 
 
 
- <div className=' text-fix self-center pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
- <Draggable
-    >
-      <textarea row="3" className="text-fix text-white max-w-[80vw] min-h-[25vh] bg-transparent">
+ <div className=' text-fix self-center min-w-[100vw] md:pt-0 pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
+ <Draggable >
+      <p  className="text-fix  self-center text-white md:max-w-[40vw] items-center  max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
     {text}
-    </textarea>
+    </p>
 {/* 
 <textarea row="3" id="input"  className="md:max-w-[40vw] max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px]  self-center text-center  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
  type='text' onChange={onChange} value={text}></textarea> */}
@@ -230,9 +220,11 @@ return(
       
 
 <div className="flex flex-col ">
- <img src="frame.png" className='absolute  max-w-[95vw] min-h-[87vh] ' alt="frame"/>
+ <img src="frame.png" className='absolute self-center max-w-[95vw] min-h-[87vh] md:hidden' alt="frame"/>
+ <img src="frame_desktop.png"  className='absolute max-w-[80vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
+
  </div>
-  <img className="max-w-[95vw] max-h-[87vh] p-1 " src={image} alt={"img"} />
+  <img className="max-w-[95vw] md:max-w-[75vw] md:min-h-[65vh] max-h-[87vh] p-1 md:p-0" src={image} alt={"img"} />
 </div>
 </div>
 </div>
@@ -241,20 +233,21 @@ return(
 }
 </>
       :
-      <div className="flex flex-col items-center mt-11 md:pt-6 " >
+      <div className="flex flex-col items-center mt-11   " >
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[-2%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh]' alt="frame"/>
-      <Webcam
+        <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/>
+        <img src="frame_desktop.png"  className='absolute max-w-[80vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
+     
+     <Webcam
       audio={false}
       
       ref={webcamRef}
       screenshotFormat="image/webp"
       
     
-      className="p-1 min-w-[90vw] min-h-[83vh]"
+      className="p-1 hidden md:block max-w-[70vw] min-h-[60vh] "
       videoConstraints={videoConstraints} />
-     
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
          */}
