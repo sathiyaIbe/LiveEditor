@@ -237,7 +237,7 @@ return(
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[-2%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
         <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/>
-        <img src="frame_desktop.png"  className='absolute max-w-[80vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
+        <img src="frame_desktop.png"  className='absolute max-w-[70vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
      
      <Webcam
       audio={false}
@@ -246,7 +246,7 @@ return(
       screenshotFormat="image/webp"
       
     
-      className="p-1 hidden md:block max-w-[70vw] min-h-[87vh] "
+      className=" hidden md:block max-w-[70vw] min-h-[87vh] "
       videoConstraints={videoConstraints} />
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
