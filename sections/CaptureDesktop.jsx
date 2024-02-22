@@ -201,7 +201,7 @@ return(
     </div>
     </div>
 
-<div ref={ref} className='flex flex-col min-h-[90vh] w-full md:py-0 py-3 md:mr-6 '>
+<div ref={ref} className='flex flex-col min-h-[90vh] w-[100%] md:py-0 py-3 md:mr-6 '>
 
 
 
@@ -246,7 +246,7 @@ return(
       screenshotFormat="image/webp"
       
     
-      className="p-1 hidden md:block max-w-[70vw] min-h-[60vh] "
+      className="p-1 hidden md:block max-w-[70vw] min-h-[87vh] "
       videoConstraints={videoConstraints} />
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
