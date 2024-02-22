@@ -110,3 +110,36 @@
   background-color:white !important;
   @apply p-1;
 }
+
+.div_block{
+  width: 100%;
+  height: auto;
+  min-width:900px;
+  position:static !important;
+  overflow: hidden;
+  @apply flex flex-col justify-center   items-center ;
+}
+
+.div_blocks{
+  width: 100%;
+  min-height: 100vh;
+  min-width:1920;
+  position:static !important;
+  overflow: hidden;
+  @apply flex flex-col justify-center   items-center py-6;
+}
+
+.new_frame{
+  width:900px;
+  height:auto;
+  position:absolute;
+  @apply self-center rounded-lg shadow-xl;
+
+}
+
+.new_camera{
+  height:auto;
+  width:900px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  @apply   self-center rounded-xl ;
+}

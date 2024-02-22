@@ -181,8 +181,8 @@ return(
 
 <div className="flex flex-col justify-center min-h-screen win-w-[100vw] ">
   <div className=' self-center md:overflow-hidden'>
-    <div className='flex  justify-end z-[100]  left-0 right-0 absolute w-[94vw] md:w-[80vw] md:pt-4'>
-    <div className='flex justify-end   md:w-[50vw] w-[90vw]  py-11'>
+    <div className='flex  justify-end z-[100]  left-0 right-0 absolute top-[15%] w-[94vw] md:w-[80vw]'>
+    <div className='flex justify-end    w-[90vw]  '>
 
   <div className='flex gap-6 pr-3'>
   <button type='button' onClick={()=>onChangeText(false)} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
@@ -191,21 +191,33 @@ return(
 </button>
     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
 
-    <LuDownloadCloud className='text-white text-[36px] md:text-[46px] p-1  cursor-pointer' onClick={onButtonClick}/>
+    <LuDownloadCloud className='text-white text-[36px] md:text-[42px] p-1  cursor-pointer' onClick={onButtonClick}/>
     
      </div>
      <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
-    <AiOutlineClose className='ext-white text-[36px] md:text-[46px] p-1  cursor-pointer' onClick={closeImgEditor} />
+    <AiOutlineClose className='ext-white text-[36px] md:text-[42px] p-1  cursor-pointer' onClick={closeImgEditor} />
     </div>
     </div>
     </div>
     </div>
+    <div className=' flex flex-col  '>
 
-<div ref={ref} className='flex flex-col min-h-[90vh] w-[100%] md:py-0 py-3 md:mr-6 '>
+<div ref={ref} className='flex flex-col rounded-2xl '>
 
+ 
+ 
 
+      
 
- <div className=' text-fix self-center min-w-[100vw] md:pt-0 pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
+{/* <div className="flex flex-col ">
+ <img src="frame.png" className='absolute self-center max-w-[95vw] min-h-[87vh] md:hidden' alt="frame"/>
+ <img src="frame_desktop.png"  className='absolute max-w-[80vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
+
+ </div>
+  <img className="max-w-[95vw] md:max-w-[75vw] md:min-h-[65vh] max-h-[87vh] p-1 md:p-0" src={image} alt={"img"} />
+</div> */}
+<div  className="div_block ">
+<div className=' text-fix self-center min-w-[100vw] md:pt-0 pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
  <Draggable >
       <p  className="text-fix  self-center text-white md:max-w-[40vw] items-center  max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
     {text}
@@ -215,16 +227,12 @@ return(
  type='text' onChange={onChange} value={text}></textarea> */}
   </Draggable>
  </div>
+ <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
+
  
-
-      
-
-<div className="flex flex-col ">
- <img src="frame.png" className='absolute self-center max-w-[95vw] min-h-[87vh] md:hidden' alt="frame"/>
- <img src="frame_desktop.png"  className='absolute max-w-[80vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
-
- </div>
-  <img className="max-w-[95vw] md:max-w-[75vw] md:min-h-[65vh] max-h-[87vh] p-1 md:p-0" src={image} alt={"img"} />
+  <img className="new_camera" src={image} alt={"img"} />
+  </div>
+</div>
 </div>
 </div>
 </div>
@@ -233,20 +241,40 @@ return(
 }
 </>
       :
-      <div className="flex flex-col items-center mt-11   " >
-  <button className=" my-6   max-w-[150px] z-10 absolute bottom-[-2%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+  //     <div className="flex flex-col items-center mt-11   " >
+  // <button className=" my-6   max-w-[150px] z-10 absolute bottom-[3%]  px-3 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+  //       Capture</button>
+  //       {/* <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/> */}
+  //       <img src="frame_desktop.png"  className='absolute w-[70vw] h-[78vh] rounded-lg md:block hidden' alt="frame-desktop"/>
+     
+  //    <Webcam
+  //     audio={false}
+      
+  //     ref={webcamRef}
+  //     screenshotFormat="image/webp"
+      
+    
+  //     className=" hidden md:block w-[70vw] rounded-lg h-[90vh] p-1 "
+  //     videoConstraints={videoConstraints} />
+  //     {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
+  //       Capture</button>
+  //        */}
+        
+  //   </div>
+
+
+
+  <div className="div_block pt-6 " >
+  <button className=" my-6 self-center  max-w-[150px] z-10 absolute bottom-[2%] px-3 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/>
-        <img src="frame_desktop.png"  className='absolute max-w-[70vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
+        {/* <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/> */}
+        <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
      
      <Webcam
       audio={false}
-      
       ref={webcamRef}
       screenshotFormat="image/webp"
-      
-    
-      className=" hidden md:block max-w-[70vw] min-h-[87vh] "
+      className=" hidden md:block new_camera "
       videoConstraints={videoConstraints} />
       {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
