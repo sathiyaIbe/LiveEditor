@@ -22,12 +22,13 @@ const Hero = () =>
   const [image, setImage] = React.useState(null);
   const [text, setText] = React.useState("");
   const [isImgEditorShown, setIsImgEditorShown] = React.useState(false);
-  const [toggleText, setToggleText] = React.useState(false);
-  const ref = useRef(null);;
+  const [toggleText, setToggleText] = React.useState(false);  const ref = useRef(null);
   const [uploadCheck,setUploadCheck] = React.useState(false)
   const [checkLoading,setCheckLoading] = React.useState(true)
 
   const camera = useRef(null);
+  const ref11 = useRef(null);
+
   let popupOverlayRef=useRef(null)
   let popupContainerRef=useRef(null)
   let popupOverlayRefMob=useRef(null)
@@ -60,6 +61,32 @@ let ms = Date.now();
     }
   }
 
+  function domElement(){
+    
+    <div ref={ref} className='flex flex-col rounded-2xl '>
+
+    <div className=' text-fix-desktop items-center w-[40vw] ml-8 max-h-[100vh] absolute  flex  cursor-move z-[100]'>
+    
+     <Draggable >
+      <div className=" flex flex-col ">
+          <p  className="text-fix-desktop text-end self-center text-white md:max-w-[35vw]   max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
+        {text}
+        </p>
+        </div>
+      </Draggable>
+     
+     </div>
+    <div  className="div_block ">
+    
+     <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
+    
+     
+      <img className="new_camera" src={image} alt={"img"} />
+      </div>
+    </div>
+    
+  }
+
   function openPopup() {
     popupOverlayRefMob.current.style.display = "flex";
   
@@ -80,8 +107,8 @@ let ms = Date.now();
 
 
   const onButtonClick =async () => {
-    html2canvas(ref.current).then(function(canvas) {
 
+    html2canvas(ref11.current).then(function(canvas) {
       var pngUrl = canvas.toDataURL("image/webp");
       UploadFile(pngUrl)
       openPopup()
@@ -95,7 +122,7 @@ let ms = Date.now();
    
   };
   const onChangeText = (e) => {
-setToggleText(e);
+    // onButtonClick()
 };
 
   const videoConstraints = {
@@ -131,7 +158,9 @@ function controlFinish(file){
 // },[])
 
 return(
-  <section className="md:max-w-[100vw] md:overflow-x-hidden">
+  <section className="md:max-w-[100vw] md:overflow-x-hidden hidden md:block">
+
+
  <div ref={popupOverlayRefMob} class="popup-overlay ">
     <div ref={popupContainerRefMob}  class="popup-container_main w-[90%] flex flex-col justify-center  gap-3">
       {checkLoading?
@@ -155,78 +184,35 @@ return(
       <div>
       {isImgEditorShown ?
     
-<>
-{!toggleText&&
-<div className="flex flex-col textEditodBg">
- <textarea row="3" id="input"  className="md:max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
- type='text' placeholder="Please add your message..." onChange={onChange} value={text}></textarea>
- <button type="button" className="my-6 self-center  max-w-[150px]  px-8 py-3 text-[22px] font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={()=>onChangeText(true)}>Next</button> 
-
+<div className="overflow-hidden max-w-[100vw] max-h-[100vh] overflow-y-hidden overflow-x-hidden">
+<div className="flex  overflow_check min-h-screen w-full absolute z-[100]">
+<div className="flex flex-col textEditodBg min-w-[100vw] min-h-screen ">
+ <textarea row="3" id="input"  className="max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
+ type='text' placeholder="Please add your Women’s Day message" onChange={onChange} value={text}></textarea>
+ <button type="button" className="my-6 self-center  max-w-[150px]  px-8 py-3 text-[22px] font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={onButtonClick}>
+  Submit</button> 
 </div>
-}
-{toggleText&&
-        <>
-        {uploadCheck?
-        <div className="flex flex-col textEditodBg"> 
-        <h1 className="Header mb-6 mt-6">Upload the file</h1>
-       <UploadButton options={options}
-                onComplete={(file) =>controlFinish(file)}>
-    {({onClick}) =>
-      <button className="my-6 self-center   max-w-[190px]   px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={onClick}>
-        Upload Here
-      </button>
-    }
-  </UploadButton>
-        </div>:
-
-<div className="flex flex-col justify-center min-h-screen win-w-[100vw] ">
+</div>
+    {/* START THE REF */}
+  
+    <div  className="flex flex-col justify-center min-h-[100vh] absolute ">
   <div className=' self-center md:overflow-hidden'>
-    <div className='flex  justify-end z-[100]  left-0 right-0 absolute top-[15%] w-[94vw] md:w-[80vw]'>
-    <div className='flex justify-end    w-[90vw]  '>
-
-  <div className='flex gap-6 pr-3'>
-  <button type='button' onClick={()=>onChangeText(false)} className='bg-zinc-950 cursor-pointer bg-opacity rounded-full p-1 w-25 md:p-3 text-white'>
-
-<IoText className='ext-white text-[36px] md:text-[46px] p-1 '  />
-</button>
-    <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
-
-    <LuDownloadCloud className='text-white text-[36px] md:text-[42px] p-1  cursor-pointer' onClick={onButtonClick}/>
-    
-     </div>
-     <div className='bg-zinc-950 rounded-full p-1 md:p-3 text-white'>
-    <AiOutlineClose className='ext-white text-[36px] md:text-[42px] p-1  cursor-pointer' onClick={closeImgEditor} />
-    </div>
-    </div>
-    </div>
-    </div>
     <div className=' flex flex-col  '>
+    <div id="idr" ref={ref11} className='flex flex-col rounded-2xl '>
 
-<div ref={ref} className='flex flex-col rounded-2xl '>
+<div className=' text-fix-desktop items-center w-[40vw] ml-8 max-h-[100vh] absolute  flex  cursor-move z-[99]'>
 
- 
- 
-
-      
-
-{/* <div className="flex flex-col ">
- <img src="frame.png" className='absolute self-center max-w-[95vw] min-h-[87vh] md:hidden' alt="frame"/>
- <img src="frame_desktop.png"  className='absolute max-w-[80vw] max-h-[90vh] md:block hidden' alt="frame-desktop"/>
-
- </div>
-  <img className="max-w-[95vw] md:max-w-[75vw] md:min-h-[65vh] max-h-[87vh] p-1 md:p-0" src={image} alt={"img"} />
-</div> */}
-<div  className="div_block ">
-<div className=' text-fix self-center min-w-[100vw] md:pt-0 pt-3 flex fex-col justify-center items-center absolute cursor-move z-[100]'>
  <Draggable >
-      <p  className="text-fix  self-center text-white md:max-w-[40vw] items-center  max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
+  <div className=" flex flex-col ">
+      <p  className="text-fix-desktop text-end self-center text-white md:max-w-[35vw]   max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
     {text}
     </p>
-{/* 
-<textarea row="3" id="input"  className="md:max-w-[40vw] max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px]  self-center text-center  bg-transparent border  border-none text-white  rounded-lg focus:ring-none focus:border-none block w-full p-2.5 "
- type='text' onChange={onChange} value={text}></textarea> */}
+    </div>
   </Draggable>
+ 
  </div>
+<div  className="div_block ">
+
  <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
 
  
@@ -236,35 +222,11 @@ return(
 </div>
 </div>
 </div>
-}
-</>
-}
-</>
+
+    {/* End THE REF */}
+</div>
       :
-  //     <div className="flex flex-col items-center mt-11   " >
-  // <button className=" my-6   max-w-[150px] z-10 absolute bottom-[3%]  px-3 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
-  //       Capture</button>
-  //       {/* <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/> */}
-  //       <img src="frame_desktop.png"  className='absolute w-[70vw] h-[78vh] rounded-lg md:block hidden' alt="frame-desktop"/>
-     
-  //    <Webcam
-  //     audio={false}
-      
-  //     ref={webcamRef}
-  //     screenshotFormat="image/webp"
-      
-    
-  //     className=" hidden md:block w-[70vw] rounded-lg h-[90vh] p-1 "
-  //     videoConstraints={videoConstraints} />
-  //     {/* <button className=" my-6   max-w-[150px] z-10 bottom-[15%] absolute left-0 right-0   px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
-  //       Capture</button>
-  //        */}
-        
-  //   </div>
-
-
-
-  <div className="div_block pt-6 " >
+      <div className="div_block pt-6 " >
   <button className=" my-6 self-center  max-w-[150px] z-10 absolute bottom-[2%] px-3 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
         {/* <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/> */}
