@@ -159,3 +159,29 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   @apply   self-center rounded-xl ;
 }
+
+
+
+.div_blocks_mob{
+  width: 100%;
+  min-height: 100vh;
+  min-width:100vw;
+  position:static !important;
+  overflow: hidden;
+  @apply flex flex-col justify-center   items-center py-6;
+}
+
+.new_frame_mob{
+  width:90vw;
+  height:80vh;
+  position:absolute;
+  @apply self-center rounded-lg shadow-xl;
+
+}
+
+.new_camera_mob{
+  height:80vh;
+  width:90vw;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  @apply   self-center rounded-xl p-1;
+}

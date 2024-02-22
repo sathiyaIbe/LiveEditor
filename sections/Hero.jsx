@@ -72,7 +72,7 @@ let ms = Date.now();
         // setIsImgEditorShown(false)
         // setToggleText(false)
         // setText("")
-        setUploadCheck(false);
+        setCheckLoading(false);
       }else{
         alert("Upload Failed Try Again");
       }
@@ -174,19 +174,22 @@ return(
 </div>
 </div>
 {/* START of REF */}
-<div className="flex flex-col p-6 p-6 absolute ">
+<div className="flex flex-col  p-6 p-6 absolute ">
   <div className='self-center'>
-<div ref={ref} className='flex flex-col min-h-[83vh]  py-3  aligns-center'>
- <div className=' text-fix self-center pt-3 w-[100vw] flex fex-col justify-center items-center absolute cursor-move z-[99]'>
-      <h1  className="text-fix text-center text- self-center max-w-[100%] leading-[32px] min-h-[25vh] bg-transparent">
-    {text}
+<div ref={ref} className='flex flex-col rounded-xl'>
+ <div className=' text-fix self-center  w-[100vw] flex fex-col justify-center items-center absolute cursor-move z-[99]'>
+      <h1  className="text-fix text-center text-white self-center max-w-[85%] leading-[32px] min-h-[25vh] bg-transparent">
+     {text}
     </h1>
  </div>
 
-<div className="flex flex-col ">
- <img src="frame.png" className='absolute  max-w-[95vw] min-h-[87vh] ' alt="frame"/>
+ <div  className="div_block_mob self-center">
+
+<img src="frame.png"  className='new_frame_mob' alt="frame-desktop"/>
+
+
+ <img className="new_camera_mob" src={image} alt={"img"} />
  </div>
-  <img className="max-w-[95vw] max-h-[87vh] p-1 " src={image} alt={"img"} />
 </div>
 </div>
 </div>

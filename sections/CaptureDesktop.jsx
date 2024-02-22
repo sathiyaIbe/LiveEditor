@@ -184,8 +184,8 @@ return(
       <div>
       {isImgEditorShown ?
     
-<div className="overflow-hidden max-w-[100vw] max-h-[100vh] overflow-y-hidden overflow-x-hidden">
-<div className="flex  overflow_check min-h-screen w-full absolute z-[100]">
+<div className="overflow-hidden max-w-[100vw] max-h-[100vh] overflow-y-hidden  overflow-x-hidden">
+<div className="flex  overflow_check min-h-screen w-full absolute z-[100] ">
 <div className="flex flex-col textEditodBg min-w-[100vw] min-h-screen ">
  <textarea row="3" id="input"  className="max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
  type='text' placeholder="Please add your Women’s Day message" onChange={onChange} value={text}></textarea>
