@@ -171,7 +171,7 @@ return(
       <div className="flex flex-col items-center mt-11 md:pt-6 " >
   <button className=" my-6   max-w-[150px] z-10 absolute bottom-[-2%]  px-8 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
-        <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh]' alt="frame"/>
+        <img src="frame_1.png"  className='absolute min-w-[90vw] min-h-[85vh]' alt="frame"/>
       <Webcam
       audio={false}
       ref={webcamRef}
