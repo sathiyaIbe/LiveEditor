@@ -158,7 +158,7 @@ return(
       {isImgEditorShown ?
     
 <div className="overflow-hidden max-w-[100vw] max-h-[100vh] overflow-y-hidden  overflow-x-hidden">
-<div className="flex  overflow_check min-h-screen w-full absolute z-[100] ">
+<div className="flex  overflow_check min-h-screen w-full absolute  z-[100]">
 <div className="flex flex-col textEditodBg min-w-[100vw] min-h-screen ">
  <textarea row="3" id="input"  className="max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
  type='text' placeholder="Please type your name and International Women’s Day message here" onChange={onChange} value={text}></textarea>
@@ -173,19 +173,17 @@ return(
     <div className=' flex flex-col  '>
     <div id="idr" ref={ref11} className='flex flex-col rounded-2xl '>
 
-<div className=' text-fix-desktop items-center w-[40vw] ml-8 max-h-[100vh] absolute  flex  cursor-move z-[99]'>
+<div  className="div_block ">
 
- <Draggable >
-  <div className=" flex flex-col ">
-      <p  className="text-fix-desktop text-end self-center text-white md:max-w-[35vw]   max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
+<div className=' text-fix-desktop bg-  absolute  flex flex-col justify-end cursor-move z-[99]'>
+
+
+  <div className=" flex flex-col justify-end ">
+      <p  className="  self-center text-black md:max-w-[35vw]   outline-none  md:min-h-[auto] bg-transparent ">
     {text}
     </p>
     </div>
-  </Draggable>
- 
  </div>
-<div  className="div_block ">
-
  <img src="frame_desktop_1.png"  className='new_frame' alt="frame-desktop"/>
 
  
