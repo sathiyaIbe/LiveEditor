@@ -61,31 +61,7 @@ let ms = Date.now();
     }
   }
 
-  function domElement(){
-    
-    <div ref={ref} className='flex flex-col rounded-2xl '>
 
-    <div className=' text-fix-desktop items-center w-[40vw] ml-8 max-h-[100vh] absolute  flex  cursor-move z-[100]'>
-    
-     <Draggable >
-      <div className=" flex flex-col ">
-          <p  className="text-fix-desktop text-end self-center text-white md:max-w-[35vw]   max-w-[80vw] outline-none min-h-[25vh] md:min-h-[30vh] bg-transparent ">
-        {text}
-        </p>
-        </div>
-      </Draggable>
-     
-     </div>
-    <div  className="div_block ">
-    
-     <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
-    
-     
-      <img className="new_camera" src={image} alt={"img"} />
-      </div>
-    </div>
-    
-  }
 
   function openPopup() {
     popupOverlayRefMob.current.style.display = "flex";
@@ -153,9 +129,6 @@ function controlFinish(file){
  setUploadCheck(false)
   }
 }
-// useEffect(()=>{
-// openPopup()
-// },[])
 
 return(
   <section className="md:max-w-[100vw] md:overflow-x-hidden hidden md:block">
@@ -213,7 +186,7 @@ return(
  </div>
 <div  className="div_block ">
 
- <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
+ <img src="frame_desktop_1.png"  className='new_frame' alt="frame-desktop"/>
 
  
   <img className="new_camera" src={image} alt={"img"} />
@@ -230,7 +203,7 @@ return(
   <button className=" my-6 self-center  max-w-[150px] z-10 absolute bottom-[2%] px-3 py-3 text-lg font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={capture}>
         Capture</button>
         {/* <img src="frame.png"  className='absolute min-w-[90vw] min-h-[85vh] md:hidden' alt="frame"/> */}
-        <img src="frame_desktop.png"  className='new_frame' alt="frame-desktop"/>
+        <img src="frame_desktop_1.png"  className='new_frame' alt="frame-desktop"/>
      
      <Webcam
       audio={false}

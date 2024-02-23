@@ -156,7 +156,7 @@ return(
 
  <div  className="div_block_mob self-center">
 
-<img src="frame.png"  className='new_frame_mob' alt="frame-desktop"/>
+<img src="frame_1.png"  className='new_frame_mob' alt="frame-desktop"/>
 
 
  <img className="new_camera_mob" src={image} alt={"img"} />
