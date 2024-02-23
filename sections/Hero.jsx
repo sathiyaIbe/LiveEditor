@@ -136,7 +136,7 @@ return(
       {isImgEditorShown ?
     
 <div className="overflow-hidden max-w-[100vw] max-h-[100vh] overflow-y-hidden overflow-x-hidden">
-<div className="flex  overflow_check min-h-screen w-full absolute z-[100] ">
+<div className="flex  overflow_check min-h-screen w-full absolute  ">
 <div className="flex flex-col textEditodBg">
  <textarea row="3" id="input"  className="md:max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
  type='text' placeholder="Please type your name and International Women’s Day message here" onChange={onChange} value={text}></textarea>
@@ -145,11 +145,11 @@ return(
 </div>
 </div>
 {/* START of REF */}
-<div className="flex flex-col  p-6 p-6 absolute ">
+<div className="flex flex-col  p-6 p-6 absolute z-[100] ">
   <div className='self-center'>
 <div ref={ref} className='flex flex-col rounded-xl'>
- <div className=' text-fix self-center  w-[100vw] flex fex-col justify-center items-center absolute cursor-move z-[99]'>
-      <h1  className="text-fix text-center text-white self-center max-w-[85%] leading-[32px] min-h-[25vh] bg-transparent">
+ <div className=' text-fix self-center   w-[90vw] flex fex-col justify-center items-center absolute cursor-move z-[99]'>
+      <h1  className=" text-center text-black self-center max-w-[60vw]  min-h-[auto] bg-transparent">
      {text}
     </h1>
  </div>
