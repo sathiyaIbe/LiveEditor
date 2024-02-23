@@ -147,7 +147,7 @@ return(
       </div>:
       <div className="bg-white  flex flex-col py-11 w-[70%] p-3 self-center rounded-lg">
         <img className="w-[50px] self-center mb-3" src="/check.png" alt="success-icon" />
-            <p className="loadText w-[100%] self-center ">Thank You! For participating. Your Photo has been uploaded to our secure database</p>
+            <p className="loadText w-[100%] self-center ">Thank you for participating! Your details have been successfully uploaded onto our secure database</p>
 
       </div>
 }
@@ -161,14 +161,14 @@ return(
 <div className="flex  overflow_check min-h-screen w-full absolute  z-[100]">
 <div className="flex flex-col textEditodBg min-w-[100vw] min-h-screen ">
  <textarea row="3" id="input"  className="max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
- type='text' placeholder="Please type your name and International Women’s Day message here" onChange={onChange} value={text}></textarea>
+ type='text' placeholder="Please type your name and International Women’s Day message here (Maximum 120 characters)" onChange={onChange} value={text}></textarea>
  <button type="button" className="my-6 self-center  max-w-[150px]  px-8 py-3 text-[22px] font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={onButtonClick}>
   Submit</button> 
 </div>
 </div>
     {/* START THE REF */}
   
-    <div  className="flex flex-col justify-center min-h-[100vh] absolute ">
+    <div  className="flex flex-col justify-center min-h-[100vh] absolute  ">
   <div className=' self-center md:overflow-hidden'>
     <div className=' flex flex-col  '>
     <div id="idr" ref={ref11} className='flex flex-col rounded-2xl '>
@@ -179,8 +179,8 @@ return(
 
 
   <div className=" flex flex-col justify-end ">
-      <p  className="  self-center text-black md:max-w-[35vw]   outline-none  md:min-h-[auto] bg-transparent ">
-    {text}
+      <p  className="  self-center text-black md:max-w-[32vw] pt-3   outline-none  md:min-h-[auto] bg-transparent ">
+      {text}  
     </p>
     </div>
  </div>

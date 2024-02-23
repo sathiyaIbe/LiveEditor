@@ -23,13 +23,13 @@
 
 .text-fix {
   position:absolute;
-  bottom:10%;
+  bottom:8%;
   right:0;
   left:0;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight:bold;
-  @apply text-[10px] leading-[16px] ml-4 md:ml-4 md:bottom-[20%];
+  @apply text-[16px] leading-[20px] ml-4 md:ml-4 md:bottom-[20%];
   
 }
 
@@ -42,9 +42,10 @@
   padding-bottom:auto;
   padding-left:auto;
   padding-right:auto;
-  @apply text-[10px] md:text-[10px] leading-[16px] ;
+  @apply text-[19px] md:text-[19px] leading-[24px] ;
   
 }
+
 
 .overflow_check{
   overflow: hidden !important;
