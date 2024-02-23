@@ -122,7 +122,7 @@ return(
       <ScaleLoader className="text-[48px]" color="#F9A603" />
 
       </div>
-      <p className="loadText ">Almost there file is uploading...</p>
+      <p className="loadText ">Your photo is uploading…</p>
       </div>:
       <div className="bg-white  flex flex-col py-11 w-[70%] p-3 self-center rounded-lg">
         <img className="w-[50px] self-center mb-3" src="/check.png" alt="success-icon" />

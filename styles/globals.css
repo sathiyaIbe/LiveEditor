@@ -58,7 +58,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
-  @apply text-[24px] md:text-[36px] ml-4 ;
+  @apply text-[18px] leading-[24px] md:text-[36px] md:leading-[40px] ml-4 ;
 }
 
 .loadText{
