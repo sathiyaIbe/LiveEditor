@@ -188,7 +188,7 @@ return(
 <div className="flex  overflow_check min-h-screen w-full absolute z-[100] ">
 <div className="flex flex-col textEditodBg min-w-[100vw] min-h-screen ">
  <textarea row="3" id="input"  className="max-w-[40vw] mt-24 textArea max-w-[80vw] min-h-[25vh] resize-y resize-x  track-[1px] placeholder-black  self-center text-center  bg-transparent border border-[3px]  border-gray-300 text-black  rounded-lg focus:ring-black focus:border-black block w-full p-2.5 "
- type='text' placeholder="Please add your Women’s Day message" onChange={onChange} value={text}></textarea>
+ type='text' placeholder="Please type your name and International Women’s Day message here" onChange={onChange} value={text}></textarea>
  <button type="button" className="my-6 self-center  max-w-[150px]  px-8 py-3 text-[22px] font-bold text-yellow-500 transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" onClick={onButtonClick}>
   Submit</button> 
 </div>
